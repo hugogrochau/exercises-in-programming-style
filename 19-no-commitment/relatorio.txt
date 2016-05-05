@@ -1,0 +1,51 @@
+Titulo: As 25 palavras mais frequentes
+
+Autores:
+
+Versão atual: v1.0
+
+Tamanho aproximado: 35KB
+
+Sobre: o programa recebe um arquivo .txt e conta quantas ocorrencias cada palavra tem. Por fim ele responde
+ao usuario as 25 palavras que mais apareceram e quantas vezes apareceram, em ordem de mais ocorrencias para
+menos ocorrencias.
+
+Arquitetura:
+
+main.lua
+|-> config.lua
+|-> frequency.lua (precompilado)
+|-> word_count.lua (precompilado)
+|-> words.txt
+
+word_cont.lua
+
+frequency.lua
+
+Compilação e execução:
+
+1 - gerar os arquivos precompilados
+
+luac -o frequency frequency.lua
+luac -o word_count word_count.lua
+
+2 - mover os arquivos gerados para a pasta "plugins"
+
+3 - renomear os arquivos gerados adicionando a extensão .lua
+
+4 - iniciar o programa
+
+lua main.lua words.txt
+
+Pre-condição:
+
+1) Deve existir um arquivo words.txt com o texto que será consultado
+2) Devem existir os arquivos precompilados dos módulos frequency.lua
+e word_count.lua para que o programa main.lua execute.
+
+Pos-condição:
+
+1) Depois de precompilados, os arquivos frequency.lua e word_count.lua
+devem ser movidos para a pasta plugins
+2) um print é apresentado com a string (palavra) e int (frequencia) das
+palavras com maior ocorrencia, em ordem decrescente de frequencia
