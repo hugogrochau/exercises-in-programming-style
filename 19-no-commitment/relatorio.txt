@@ -1,6 +1,15 @@
-Titulo: As 25 palavras mais frequentes
+Titulo: As 25 palavras mais frequentes 
 
 Autores:
+
+Gustavo Marques
+Hugo Grochau
+Lucas Hardman
+Marcelo Politzer
+Marcos Rapoport
+Michele Valente
+Philipe Bonfim
+Tatiana Magdalena
 
 Versão atual: v1.0
 
@@ -49,3 +58,9 @@ Pos-condição:
 devem ser movidos para a pasta plugins
 2) um print é apresentado com a string (palavra) e int (frequencia) das
 palavras com maior ocorrencia, em ordem decrescente de frequencia
+
+Livro diario:
+03/05/2016 - Divisão dos estilos entre os participantes dos grupos. Tradução
+do estilo 19 de python para lua. Verificação dos 6 principios de engenharia 
+de software. Inicio do relatorio.
+04/05/2016 - Fim do relatorio e verificações finais.
