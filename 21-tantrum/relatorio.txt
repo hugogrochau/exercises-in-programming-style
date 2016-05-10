@@ -60,4 +60,4 @@ Diário de produção:
 
 03/05/2016 - Divisão dos estilos entre os participantes dos grupos. Início da tradução do estilo 21 (Tantrum) para Lua, feito em conjunto por Michelle e Tatiana, já verificando em sua execução se as 6 regras da disciplina estavam sendo aplicadas. O próprio estilo utilizado - Tantrum - facilitou na tradução, uma vez que indica de forma precisa onde cada erro está ocorrento. 
 04/05/2016 - Finalização da tradução do código 21 para Lua. Início da elaboração do relatório, explicitando como foram aplicadas as 6 regras.
-
+09/05/2016 - Finalizacao do relatorio
