@@ -1,3 +1,8 @@
+--Recebe um caminho para um arquivo de onde lerá o texto.
+--Se o parâmetro não for uma string, não faz nada.
+--Se o caminho for nulo, não faz nada.
+--Se o caminho for inválido, "lança exceção"
+--Retorna um conjunto de strings como cada palavra do texto que não é stop_word.
 function extract_words(path_to_file)
   local fail = false
   local word_list = {}
@@ -35,6 +40,8 @@ function extract_words(path_to_file)
 end
 
 
+--Checa se recebeu como parâmetro o nome espécifico do arquivo a ser lido.
+--Caso não tenha recebido lê do araquivo "../input.txt"
 if #arg > 0 then
   filename = arg[1]
 else
