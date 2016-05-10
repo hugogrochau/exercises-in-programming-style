@@ -17,9 +17,7 @@
 
 ## Descrição
 
-O programa recebe um arquivo .txt e conta quantas ocorrências cada palavra tem. Por fim ele responde
-ao usuário as 25 palavras que mais apareceram e quantas vezes apareceram, em ordem de mais ocorrências para
-menos ocorrências.
+O programa recebe um arquivo .txt e conta quantas ocorrências cada palavra tem. Em seguida o usuário pode navegar entre as palavras mais usadas.
 
 ## Execução:
 
