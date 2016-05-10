@@ -151,6 +151,8 @@ function sort(word_freq)
 end
 
 -- Auxiliar function to get the lenght of a table
+-- Pre: Table that you want the lengh
+-- Pos: Size of the table
 function len(tab)
 	local count = 0;
 	for index in pairs(tab) do 
