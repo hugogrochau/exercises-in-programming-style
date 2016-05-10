@@ -1,0 +1,63 @@
+--REGRA 1--
+
+Título: As 25 palavras mais frequentes
+
+Autores:
+
+Gustavo Marques
+Hugo Grochau
+Lucas Hardman
+Marcelo Politzer
+Marcos Rapoport
+Michele Valente
+Philipe Bonfim
+Tatiana Magdalena
+
+Data: 04/05/2016
+
+Versão atual: v1.0
+
+Tamanho aproximado: 35KB
+
+Sobre: o programa recebe um arquivo .txt e conta quantas ocorrencias cada palavra tem. Por fim ele responde
+ao usuario as 25 palavras que mais apareceram e quantas vezes apareceram, em ordem de mais ocorrencias para
+menos ocorrencias.
+
+
+--REGRA 2--
+
+O próprio estilo escolhido faz a verificação das pós condições necessárias ao código, impedindo que se prossiga em caso de elas não serem verificadas. Desta forma, garante-se que as pós condições estão sendo satisfeitas.
+
+
+--REGRA 3--
+
+Arquitetura:
+
+|->extract_words
+|->remove_stop_words
+|--->has_value
+|->frequencies
+|->sort
+|--->spairs
+|->len
+
+Manteve-se a regra de (3-6) sempre que possível.
+
+
+--REGRA 4--
+
+Os nomes das variáveis e das funções são nomes que remetem à sua utilização.
+
+
+--REGRA 5--
+
+As funções tratam de forma simples a sua proposta, que pode ser inferida pelo nome desta função.
+
+
+--REGRA 6--
+
+Diário de produção:
+
+03/05/2016 - Divisão dos estilos entre os participantes dos grupos. Início da tradução do estilo 21 (Tantrum) para Lua, feito em conjunto por Michelle e Tatiana, já verificando em sua execução se as 6 regras da disciplina estavam sendo aplicadas. O próprio estilo utilizado - Tantrum - facilitou na tradução, uma vez que indica de forma precisa onde cada erro está ocorrento. 
+04/05/2016 - Finalização da tradução do código 21 para Lua. Início da elaboração do relatório, explicitando como foram aplicadas as 6 regras.
+
