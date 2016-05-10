@@ -1,8 +1,15 @@
-
+-- Title: Tantrum
+-- Author: Michelle Valente and Tatiana Magdalena
+-- Date: 09/05/2016
+-- Version: 1.0
 
 
 -- The functions
-
+-- Extract words from file
+-- Pre: path to file
+-- Pos: a table with all the words.
+-- The function reads each words from the file inserting in a table.
+-- Assert function makes sure that the path is valid and pcall if it was open right
 function extract_words(path_to_file)
 
 	local content
@@ -26,6 +33,12 @@ function extract_words(path_to_file)
     return words
 end
 
+
+-- Remove words that are not going to be counted
+-- Pre: list with all the words
+-- Pos: List without the not used words
+-- Assert and pcall checks if the file is valid and if the list
+-- is valid.
 function remove_stop_words(word_list)
     assert(type(word_list) == "table", "I need a table!")
 
@@ -52,7 +65,7 @@ function remove_stop_words(word_list)
     return words_list_final
 end
 
--- Check if there is value in the table
+-- Auxiliar function to check if there is value in the table
 function has_value (tab, val)
     for index, value in ipairs (tab) do
         if value == val then
@@ -66,6 +79,8 @@ end
 -- Get the frequencie of each word
 -- Pre: List with all the words
 -- Pos: Table with word and frequency
+-- Assert function makes sure its a table the input
+-- and the new table is created in loop to all the table
 function frequencies(word_list)
     assert(type(word_list) == "table", "I need a table!")
 
@@ -81,6 +96,7 @@ function frequencies(word_list)
     return word_freqs
 end
 
+-- Auxiliar function to get pairs in function to sort
 function spairs(t, order)
     -- collect the keys
     local keys = {}
@@ -107,6 +123,8 @@ end
 -- Sort the table
 -- Pre: list with words and frequencies not sorted
 -- Pos: list with words and frequencies sorted
+-- Assert function makes sure the input is a table and not empty
+-- xpcall makes sure the sort function works
 function sort(word_freq)
 
 	local sortedWords = {}
@@ -127,6 +145,7 @@ function sort(word_freq)
 	return word_freq
 end
 
+-- Auxiliar function to get the lenght of a table
 function len(tab)
 	local count = 0;
 	for index in pairs(tab) do 
@@ -138,7 +157,8 @@ end
 
 
 --The main function
-
+-- xpcall and assert makes sure every function works and gives 
+-- the returned value expected.
 xpcall(function () 
 
 			local word_freqs
