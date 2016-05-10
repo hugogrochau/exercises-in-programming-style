@@ -66,6 +66,8 @@ function remove_stop_words(word_list)
 end
 
 -- Auxiliar function to check if there is value in the table
+-- Pre: table and value that you are looking for
+-- Pos: True if found the word and false if not
 function has_value (tab, val)
     for index, value in ipairs (tab) do
         if value == val then
