@@ -37,6 +37,8 @@ function extract_words(path_to_file)
       fail = true
     end
   end
+  
+  --return [w for w in word_list if not w in stop_words] if not fail else []
 end
 
 
