@@ -96,7 +96,10 @@ function frequencies(word_list)
     return word_freqs
 end
 
--- Auxiliar function to get pairs in function to sort
+-- Auxiliar function that takes a table and create an array of pairs
+-- and sort it.
+-- PRE: table and function to order.
+-- POS: Sorted frequencies
 function spairs(t, order)
     -- collect the keys
     local keys = {}
