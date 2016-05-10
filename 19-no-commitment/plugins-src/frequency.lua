@@ -1,5 +1,8 @@
 local frequencies = {}
 
+-- PRE: words_list list é uma tabela de palavras
+-- POS: words é uma tabela ordenada por frequencia de pares { palavra, frequencia } com até 25 elementos
+-- ARG: sort garante que a tabela é ordenada e o ultimo for de que apenas as primeiras 25 estão na tabela
 function frequencies.top25(words_list)
 
 	local count = {}
