@@ -1,3 +1,7 @@
+--Pré condições:
+----Os arquivos stops_words.txt e input.txt devem estar na pasta a cima de onde encontra-se o arquivo de script.
+
+
 --Recebe um caminho para um arquivo de onde lerá o texto.
 --Se o parâmetro não for uma string, não faz nada.
 --Se o caminho for nulo, não faz nada.
