@@ -1,4 +1,6 @@
---split funciton
+-- Split function
+-- Pre: s = string, delimiter
+-- Pos: array with the string split between the divisors
 function split(s, delimiter)
     result = {};
     for match in (s..delimiter):gmatch("(.-)"..delimiter) do
@@ -35,6 +37,7 @@ function error_state ()
 end
 
 -- The "server"-side application handlers
+-- Pos: user instructions and links
 function default_get_handler(args)
 	local rep = "What would you like to do?";
 	rep = rep .. "\n1 - Quit" .. "\n2 - Upload file";
@@ -44,15 +47,20 @@ function default_get_handler(args)
     return rep, links;
 end
 
+-- Stops the server
 function quit_handler (args)
     print("Goodbye cruel world...");
 	os.exit();
 end
 
+-- Sends upload instructions
 function upload_get_handler (args)
     return "Name of file to upload?", {"post", "file"};
 end
 
+-- Checks is a value exists in an array
+-- Pre: Array and value
+-- Pos: true if value in array else false
 function value_exists_in (aArray, aValue)
 	for i, value in pairs(aArray) do
 		if value == aValue then
@@ -62,6 +70,9 @@ function value_exists_in (aArray, aValue)
 	return false;
 end
 
+-- Handler for browsing through each of the most frequent words
+-- Pre: args = {filename, word_index)
+-- Pos: String with next most frequent word and links with options 
 function word_get_handler(args)
     function get_word(filename, word_index)
         -- While there's still words
@@ -86,6 +97,9 @@ function word_get_handler(args)
     return rep, links
 end
 
+-- Handles file upload simulation
+-- Pre: args = filename
+-- Pos: Fills the internal data table with word frequencies
 function upload_post_handler (args)
 	function create_data(filename)
 		if value_exists_in(data, filename) then
@@ -151,6 +165,9 @@ local handlers = {
 				 };
 
 --The "server" core
+-- Pre: the action to execute and optional arguments
+-- verb = post/get, uri = action
+-- Pos: calls the proper function with the given arguments
 function handle_request(verb, uri, args)
 	local handlerKey = verb .. "_" .. uri;
 	for idx, value in pairs(handlers) do
@@ -161,7 +178,9 @@ function handle_request(verb, uri, args)
 	return handlers["get" .. "_" .. "default"](args);
 end
 
---A very simple client "browser"
+-- A very simple client "browser"
+-- Pre: user instructions and links to possible actions
+-- Pos: prints user instructions and links then receives the user selection and sends it to the server  
 function render_and_get_input(state_representation, links)
 	print(state_representation);
 	io.flush();
