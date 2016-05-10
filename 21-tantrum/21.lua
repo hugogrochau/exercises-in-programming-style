@@ -49,12 +49,10 @@ function remove_stop_words(word_list)
             table.insert(words_list_final, lower_word)
         end
     end
-    -- traduzir para lua
-    -- stop_words.extend(list(string.ascii_lowercase))
-    -- return [w for w in word_list if not w in stop_words]
     return words_list_final
 end
 
+-- Check if there is value in the table
 function has_value (tab, val)
     for index, value in ipairs (tab) do
         if value == val then
@@ -65,6 +63,9 @@ function has_value (tab, val)
     return false
 end
 
+-- Get the frequencie of each word
+-- Pre: List with all the words
+-- Pos: Table with word and frequency
 function frequencies(word_list)
     assert(type(word_list) == "table", "I need a table!")
 
@@ -103,10 +104,12 @@ function spairs(t, order)
     end
 end
 
+-- Sort the table
+-- Pre: list with words and frequencies not sorted
+-- Pos: list with words and frequencies sorted
 function sort(word_freq)
 
 	local sortedWords = {}
-
 	assert(type(word_freq) == "table", "I need a table!")
 	assert((word_freq), "I need a non-empty table!")
 
@@ -141,10 +144,8 @@ xpcall(function ()
 			local word_freqs
 
 			assert((arg[1]), "You idiot! I need an input file!")
-            --word_freqs = frequencies(remove_stop_words(extract_words(arg[1])))
 			word_freqs = sort(frequencies(remove_stop_words(extract_words(arg[1]))))
 
-            --io.write(word_freqs)
 			assert(type(word_freqs) == "table", "OMG! This is not a table!")
 			assert((len(word_freqs) > 25), "SRSLY? Less than 25 words!")
 
