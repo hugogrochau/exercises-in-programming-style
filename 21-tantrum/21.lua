@@ -19,16 +19,16 @@ function extract_words(path_to_file)
     assert((path_to_file), "I need a non-empty string!" )
 
     if pcall(function ()
-        local f = io.open(path_to_file,"r")
-        content = f:read("*all")
-        f:close()
+        local file = io.open(path_to_file,"r")
+        content = file:read("*all")
+        file:close()
         end) then
     else
         io.write(string.format("I/O error when opening {%s}: I quit!\n",path_to_file))
     end
     
-    for w in string.gmatch(content, "%w+") do
-        table.insert(words, string.lower(w))
+    for word in string.gmatch(content, "%w+") do
+        table.insert(words, string.lower(word))
     end
     return words
 end
@@ -56,8 +56,8 @@ function remove_stop_words(word_list)
     end
 
     words_list_final = {}
-    for c, w in pairs(word_list) do
-        lower_word = w:lower()
+    for index, word in pairs(word_list) do
+        lower_word = word:lower()
         if(not has_value(stop_words_final, lower_word))then 
             table.insert(words_list_final, lower_word)
         end
@@ -103,7 +103,7 @@ end
 function spairs(t, order)
     -- collect the keys
     local keys = {}
-    for k in pairs(t) do keys[#keys+1] = k end
+    for key in pairs(t) do keys[#keys+1] = key end
 
     -- if order function given, sort by it by passing the table and keys a, b,
     -- otherwise just sort the keys 
