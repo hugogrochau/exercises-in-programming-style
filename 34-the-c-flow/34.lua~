@@ -31,13 +31,13 @@ function extract_words(path_to_file)
     end
 
     if pcall(function()
-      local f = io.open("stop_words.txt","r")
+      local f = io.open("../stop_words.txt","r")
       for w in string.gmatch(string.gsub(f:read(), ",", " "), "%w+") do
         table.insert(stop_words, w)
       end
     end) then
     else
-      io.write("I/O error when opening stops_words.txt")
+      io.write("I/O error when opening ../stops_words.txt")
       fail = true
     end
   end
@@ -51,7 +51,7 @@ end
 if #arg > 0 then
   filename = arg[1]
 else
-  filename = "input.txt"
+  filename = "../input.txt"
 end
 
 extract_words(filename)
