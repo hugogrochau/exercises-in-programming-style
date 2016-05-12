@@ -77,6 +77,20 @@ function frequencies(word_list)
   end
 end
 
+function comparator(a, b)
+  return a[1] > b[1]
+end
+
+function sort(word_freqs)
+  if type(word_freqs) == "table" and next(word_freqs) ~= nil then
+    --print("fuck")
+    table.sort(word_freqs, comparator)
+    return word_freqs
+  else
+    return {}
+  end
+end
+
 --Checa se recebeu como parâmetro o nome espécifico do arquivo a ser lido.
 --Caso não tenha recebido lê do araquivo "../input.txt"
 if #arg > 0 then
@@ -85,4 +99,5 @@ else
   filename = "input.txt"
 end
 
-for k,v in pairs(frequencies(extract_words(filename))) do print(k,v) end
+
+for k,v in pairs(sort(frequencies(extract_words(filename)))) do print(k,v) end
