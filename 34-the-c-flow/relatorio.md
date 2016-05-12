@@ -30,10 +30,11 @@ O programa recebe um arquivo .txt e conta quantas ocorrências cada palavra tem.
 ##Arquitetura:
 34.lua
 |-> extract_words
-|---> has_value
-|-> frequencies
-|-> sort
-|---> comparator
+|-->has_value
+|->frequencies
+|->sort
+|-->comparator
+
 
 ## Pre-condição:
 
