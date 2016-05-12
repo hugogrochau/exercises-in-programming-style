@@ -59,9 +59,20 @@ function extract_words(path_to_file)
   end
 
   return filtered
-  --return [w for w in word_list if not w in stop_words] if not fail else []
 end
 
+function frequencies(word_list)
+  word_freqs = {}
+  for k, v in pairs(word_list) do
+    if word_freqs[v] ~= nil then
+      word_freqs[v] = word_freqs[v] + 1
+    else
+      word_freqs[v] = 1
+    end
+  end
+
+  return word_freqs
+end
 
 --Checa se recebeu como parâmetro o nome espécifico do arquivo a ser lido.
 --Caso não tenha recebido lê do araquivo "../input.txt"
@@ -71,4 +82,4 @@ else
   filename = "input.txt"
 end
 
-for k,v in pairs(extract_words(filename)) do print(k,v) end
+for k,v in pairs(frequencies(extract_words(filename))) do print(k,v) end
