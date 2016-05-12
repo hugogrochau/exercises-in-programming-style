@@ -1,6 +1,15 @@
 --Pré condições:
 ----Os arquivos stops_words.txt e input.txt devem estar na pasta a cima de onde encontra-se o arquivo de script.
 
+function has_value (tab, val)
+    for index, value in ipairs (tab) do
+        if value == val then
+            return true
+        end
+    end
+
+    return false
+end
 
 --Recebe um caminho para um arquivo de onde lerá o texto.
 --Se o parâmetro não for uma string, não faz nada.
@@ -41,7 +50,15 @@ function extract_words(path_to_file)
       fail = true
     end
   end
-  
+
+  filtered = {}
+  for k, v in pairs(word_list) do
+    if not has_value(stop_words, v) then
+      table.insert(filtered,v)
+    end
+  end
+
+  return filtered
   --return [w for w in word_list if not w in stop_words] if not fail else []
 end
 
@@ -54,4 +71,4 @@ else
   filename = "input.txt"
 end
 
-extract_words(filename)
+for k,v in pairs(extract_words(filename)) do print(k,v) end
