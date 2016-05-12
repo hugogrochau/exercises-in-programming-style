@@ -51,7 +51,7 @@ function extract_words(path_to_file)
     end
   end
 
-  filtered = {}
+  local filtered = {}
   for k, v in pairs(word_list) do
     if not has_value(stop_words, v) then
       table.insert(filtered,v)
@@ -62,16 +62,19 @@ function extract_words(path_to_file)
 end
 
 function frequencies(word_list)
-  word_freqs = {}
-  for k, v in pairs(word_list) do
-    if word_freqs[v] ~= nil then
-      word_freqs[v] = word_freqs[v] + 1
-    else
-      word_freqs[v] = 1
+  if type(word_list) == "table" and next(word_list) ~= nil then
+    local word_freqs = {}
+    for k, v in pairs(word_list) do
+      if word_freqs[v] ~= nil then
+        word_freqs[v] = word_freqs[v] + 1
+      else
+        word_freqs[v] = 1
+      end
     end
+    return word_freqs
+  else
+    return {}
   end
-
-  return word_freqs
 end
 
 --Checa se recebeu como parâmetro o nome espécifico do arquivo a ser lido.
