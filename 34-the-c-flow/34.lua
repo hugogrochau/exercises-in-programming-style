@@ -87,7 +87,6 @@ end
 --Pos condições: Uma lista ordenada em ordem decrescente de palavras com a frequencia de cada uma.
 function sort(word_freqs)
   if type(word_freqs) == "table" and next(word_freqs) ~= nil then
-    --print("fuck")
     table.sort(word_freqs, comparator)
     return word_freqs
   else
