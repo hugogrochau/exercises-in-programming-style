@@ -16,7 +16,7 @@ Data 11/05/2016
 #Versão atual: v1.0
 
 
-## Tamanho aproximado: 3.0 KB
+## Tamanho aproximado: 5.0 KB
 
 ## Descrição:
 Recebe um caminho para um arquivo de onde será lido o texto e retorna as 25 palavras mais frequentes, se receber um caminho invalido, lança uma exeção.
