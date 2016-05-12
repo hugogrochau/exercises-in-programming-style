@@ -19,8 +19,7 @@ Data 11/05/2016
 ## Tamanho aproximado: 5.0 KB
 
 ## Descrição:
-Recebe um caminho para um arquivo de onde será lido o texto e retorna as 25 palavras mais frequentes, se receber um caminho invalido, lança uma exeção.
-O programa recebe um arquivo .txt e conta quantas ocorrências cada palavra tem. Em seguida o usuário pode navegar entre as palavras mais usadas.
+O programa recebe um arquivo .txt e conta quantas ocorrências cada palavra tem, se receber um caminho invalido, lança uma exeção. Em seguida o usuário recebe uma lista com as palavras mais usadas.
 
 ## Execução:
 * 1 - Inicie o programa com `lua 34.lua`.
@@ -44,7 +43,7 @@ Devem existir os seguintes arquivos:
 * `stop_words.txt` - palavras a serem ignoradas pela leitura.
 
 ##Pós-condição:
-* É apresentado ao usuário uma lista, de até 25 palavras, com a palavra (string) e a frequência (int) em ordem decrescente de frequência.
+* É apresentado ao usuário uma lista de palavras, com a palavra (string) e a frequência (int) em ordem decrescente de frequência.
 
 ## Livro diário:
 * 2016-05-03 - Divisão dos estilos entre os participantes dos grupos.
