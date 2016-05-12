@@ -1,6 +1,6 @@
 --Pré condições:
 ----Os arquivos stops_words.txt e input.txt devem estar na pasta a cima de onde encontra-se o arquivo de script.
-
+--Pós condições: Uma lista ordenada com as 25 palavras mais frequentes.
 function has_value (tab, val)
     for index, value in ipairs (tab) do
         if value == val then
@@ -16,6 +16,8 @@ end
 --Se o caminho for nulo, não faz nada.
 --Se o caminho for inválido, "lança exceção"
 --Retorna um conjunto de strings como cada palavra do texto que não é stop_word.
+--Pre condições: path_to_file = arquivo de leitura e stop_words deve existir.
+--Pos condições: Uma lista de palavras filtradas é retornada.
 function extract_words(path_to_file)
   local fail = false
   local word_list = {}
@@ -60,7 +62,8 @@ function extract_words(path_to_file)
 
   return filtered
 end
-
+--Pre condições: Uma lista de palavras que não seja vazia.
+--Pos condições: uma lista com as palavras e o numero de vezes que ocorrem.
 function frequencies(word_list)
   if type(word_list) == "table" and next(word_list) ~= nil then
     local word_freqs = {}
@@ -80,7 +83,8 @@ end
 function comparator(a, b)
   return a[1] > b[1]
 end
-
+--Pre condições: Uma lista de palavras com o numero de ocorrencias.
+--Pos condições: Uma lista ordenada em ordem decrescente de palavras com a frequencia de cada uma.
 function sort(word_freqs)
   if type(word_freqs) == "table" and next(word_freqs) ~= nil then
     --print("fuck")
