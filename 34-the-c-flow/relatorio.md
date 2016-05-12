@@ -28,13 +28,14 @@ O programa recebe um arquivo .txt e conta quantas ocorrências cada palavra tem.
 * 3 - Receba uma lista de até 25 palavras com suas ocorrências.
 
 ##Arquitetura:
+```
 34.lua
 |-> extract_words
 |-->has_value
 |->frequencies
 |->sort
 |-->comparator
-
+```
 
 ## Pre-condição:
 
