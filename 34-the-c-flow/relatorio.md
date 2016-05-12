@@ -31,10 +31,10 @@ O programa recebe um arquivo .txt e conta quantas ocorrências cada palavra tem.
 ```
 34.lua
 |-> extract_words
-|-->has_value
+|->has_value
 |->frequencies
 |->sort
-|-->comparator
+|->comparator
 ```
 
 ## Pre-condição:
